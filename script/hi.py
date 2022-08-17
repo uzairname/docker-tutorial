@@ -2,4 +2,9 @@ import numpy as np
 
 def print_hi(name):
 
-    print(f'Hi, {name}' + str(np.random.rand(1)))
+    np.array([1])
+
+    if not isinstance(name, str):
+        raise TypeError("name must be a string, got {}".format(type(name)))
+
+    print(f'Hi, {name}')
