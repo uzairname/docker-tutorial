@@ -52,4 +52,4 @@ jobs:
           script: |
             cd /home/${{ secrets.AWS_USER }}/docker-tutorial
             docker build -t image1 .
-            docker run image1
+            docker run -e NAME=${{ secrets.NAME }} image1
