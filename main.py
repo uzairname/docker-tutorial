@@ -1,6 +1,6 @@
 import os
 
-from script.hi import print_hi
+from script.hi import say_hi
 
 if __name__ == '__main__':
-    print_hi(os.environ.get('NAME'))
+    say_hi(os.environ.get('NAME'))
