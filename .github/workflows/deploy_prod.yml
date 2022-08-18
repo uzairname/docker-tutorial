@@ -28,7 +28,7 @@ jobs:
           tags: ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_REPO }}:latest
 
 
-  ec2:
+  ec2_deploy:
     environment: Environment1
     runs-on: ubuntu-latest
     steps:
@@ -48,7 +48,7 @@ jobs:
         with:
           host: ${{ secrets.AWS_DNS }}
           username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PK }}
           script: |
             cd /home/${{ secrets.AWS_USER }}/docker-tutorial
             docker build -t image1 .
