@@ -11,7 +11,7 @@ jobs:
     steps:
       -
         name: Test
-        run: echo "Deploying to production" + $ {{ secrets.DOCKER_ID }}
+        run: echo ${{ secrets.DOCKER_ID }}
       -
         name: Checkout
         uses: actions/checkout@v3
