@@ -40,7 +40,7 @@ jobs:
           host: ${{ secrets.AWS_DNS }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PK }}
-          source: $GITHUB_WORKSPACE/
+          source: .
           target: /home/${{ secrets.AWS_USER }}/docker-tutorial
           rm: true
 #      - name: run script
