@@ -38,7 +38,7 @@ jobs:
         with:
           host: ${{ secrets.AWS_DNS }}
           username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PK }}
           source: .
           target: /home/${{ secrets.AWS_USER }}
 #      - name: run script
