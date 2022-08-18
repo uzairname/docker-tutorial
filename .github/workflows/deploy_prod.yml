@@ -12,8 +12,8 @@ jobs:
       - name: Deploy
         uses: appleboy/scp-action@master
         with:
-          host: ${AWS_DNS}
-          username: ${AWS_USER}
-          key: ${SSH_PRIVATE_KEY}
+          host: ${{ AWS_DNS }}
+          username: ${{ AWS_USER }}
+          key: ${{ SSH_PRIVATE_KEY }}
           source: .
           target: ./docker-tutorial
