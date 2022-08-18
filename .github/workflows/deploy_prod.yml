@@ -43,10 +43,13 @@ jobs:
           source: .
           target: /home/${{ secrets.AWS_USER }}/docker-tutorial
           rm: true
-#      - name: run script
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.AWS_DNS }}
-#          username: ${{ secrets.AWS_USER }}
-#          key: ${{ secrets.SSH_PRIVATE_KEY }}
-#
+      - name: run build and run script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_DNS }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/${{ secrets.AWS_USER }}/docker-tutorial
+            docker build -t image1 .
+            docker run image1
